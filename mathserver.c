@@ -127,7 +127,7 @@ int main() {
             break;
         }
         receive_buffer[read_size] = '\0';
-
+	puts(receive_buffer);
         if (strcmp(receive_buffer, "end") == 0) {
             const char *str = "Connection closed";
             write(client1fd, str, strlen(str) + 1);
