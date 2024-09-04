@@ -38,7 +38,7 @@ void evaluate(const char *re, char *send) {
     stack_double *numst = (stack_double *)malloc(sizeof(stack_double));
     create_double(numst);
     stack *opst = (stack *)malloc(sizeof(stack));
-    create(opst);
+    create(opst)
 
     for (int i = 0; i < n; i++) {
         if (check_number(re[i])) {
