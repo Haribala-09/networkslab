@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
@@ -9,13 +8,6 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <ctype.h>
-=======
-#include<stdio.h>
-#include<arpa/inet.h>
-#include<sys/socket.h>
-#include<sys/types.h>
-#include<string.h>
->>>>>>> 300f7fa (dj)
 
 const uint16_t maxn = 5;
 const uint16_t MAX_QUESTION_LENGTH = 256;
@@ -28,7 +20,6 @@ typedef struct questions
 	bool iscorrect;
 } questions;
 
-<<<<<<< HEAD
 questions *create()
 {
 	questions *ques = (questions *)malloc(maxn * sizeof(questions));
@@ -154,29 +145,4 @@ signed main()
 	free(final_score);
 	close(listenfd);
 	return 0;
-=======
-int main(){
-	char read_buffer[100],write_buffer[100];
-	int listenfd,len;
-	struct sockaddr_in servaddr,cliaddr;
-	memset(&servaddr,0,sizeof(servaddr));
-
-	listenfd=socket(AF_INET,SOCK_DGRAM,0);
-
-	//Creating a servaddr of type ipv4 and port 3200 with taking any inbuild ip as specified as INADDR_ANY
-	servaddr.sin_family=AF_INET;
-	servaddr.sin_port=htons(3200);
-	servaddr.sin_addr.s_addr=htonl(INADDR_ANY);
-	
-	bind(listenfd,(struct sockaddr*)&servaddr,sizeof servaddr);
-
-	len = sizeof(cliaddr); 
-    int n = recvfrom(listenfd, read_buffer, sizeof(read_buffer), 
-            0, (struct sockaddr*)&cliaddr,&len); 
-    read_buffer[n] = '\0'; 
-    puts(read_buffer); 
-           
-    sendto(listenfd, write_buffer, sizeof(write_buffer), 0, 
-          (struct sockaddr*)&cliaddr, sizeof(cliaddr)); 
->>>>>>> 300f7fa (dj)
 }
