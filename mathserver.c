@@ -7,15 +7,15 @@
 #include <netinet/in.h>
 #include <sys/types.h>
 
-bool check_operator(char a) {
+inline bool check_operator(char a) {
     return a == '*' || a == '+' || a == '-' || a == '/';
 }
 
-bool check_number(char a) {
+inline bool check_number(char a) {
     return a >= '0' && a <= '9';
 }
 
-int check_priority(char a) {
+inline int check_priority(char a) {
     if (a == '+' || a == '-')
         return 1;
     if (a == '*' || a == '/')
@@ -23,7 +23,7 @@ int check_priority(char a) {
     return 0;
 }
 
-double compute(char ch, double a, double b) {
+inline double compute(char ch, double a, double b) {
     switch (ch) {
         case '+': return a + b;
         case '-': return a - b;
