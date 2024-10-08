@@ -214,6 +214,7 @@ void *client_booking(void *args)
 		}
 	}
 	close(clientfd);
+	pthread_exit(NULL);
 	return NULL;
 }
 
