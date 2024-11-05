@@ -1,0 +1,15 @@
+O:5
+Z:1
+Value with parity bit: 95
+Value with parity bit after change: 95
+The data is not manipulated, the parity check is verified
+O:4
+Z:2
+Value with parity bit: 108
+Value with parity bit after change: 44
+The data is changed, and the parity check failed
+O:5
+Z:2
+Value with parity bit: 249
+Value with parity bit after change: 441
+The data is not manipulated, the parity check is verified
